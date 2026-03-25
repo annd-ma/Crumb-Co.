@@ -1,0 +1,21 @@
+{
+  "name": "crumb-co-bakery",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.x.x",
+    "@tailwindcss/postcss": "^4.2.2",
+    "autoprefixer": "^10.4.27",
+    "next": "15.x.x",
+    "postcss": "^8.5.8",
+    "react": "19.x.x",
+    "react-dom": "19.x.x",
+    "tailwindcss": "^4.2.2"
+  }
+}
