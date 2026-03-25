@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from 'react';
-import { getNextBatch, formatCountdown } from '../lib/batchTimer';
+import { getNextBatch, formatCountdown } from '../lib/Batchtimer';
 
 export default function BatchTimerBadge() {
   const [batch, setBatch] = useState(null);
