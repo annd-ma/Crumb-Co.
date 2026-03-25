@@ -2,7 +2,7 @@
 import Link              from "next/link";
 import { useCart }       from "../lib/CartContext";
 import { useState, useEffect } from "react";
-import BatchCountdown    from "./BatchCountdown";
+import BatchCountdown    from "./Batchcountdown";
 
 export default function Navbar() {
   const { count, setIsOpen } = useCart();
