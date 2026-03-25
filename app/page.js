@@ -1,7 +1,7 @@
 import Link          from "next/link";
 import { supabase }  from "../lib/supabase";
 import ProductCard   from "../components/ProductCard";
-import RevealWrapper from "../components/Revealwrapper";
+import RevealWrapper from "../components/RevealWrapper";
 import BatchSection  from "../components/Batchsection";
 
 export const revalidate = 60;
