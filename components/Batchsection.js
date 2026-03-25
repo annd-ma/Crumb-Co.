@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { getNextBatch, BATCH_HOURS, pad } from "../lib/batchTimer";
+import { getNextBatch, BATCH_HOURS, pad } from "../lib/Batchtimer";
 
 export default function BatchSection() {
   const [batch, setBatch] = useState(null);
