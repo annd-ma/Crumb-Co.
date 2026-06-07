@@ -237,7 +237,7 @@ export default async function HomePage() {
               <Link href="/products" style={{ background: "var(--color-chocolate)", color: "var(--color-cream)", padding: "14px 32px", fontFamily: "var(--font-body)", fontSize: 11, fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", textDecoration: "none", borderRadius: 2 }}>
                 Pesan Sekarang
               </Link>
-              <a href="https://wa.me/6289540108751" target="_blank" rel="noopener noreferrer" style={{ background: "none", color: "var(--color-chocolate)", padding: "14px 32px", fontFamily: "var(--font-body)", fontSize: 11, fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", textDecoration: "none", border: "1px solid rgba(61,28,2,0.2)", borderRadius: 2 }}>
+              <a href="https://wa.me/6289524394626" target="_blank" rel="noopener noreferrer" style={{ background: "none", color: "var(--color-chocolate)", padding: "14px 32px", fontFamily: "var(--font-body)", fontSize: 11, fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", textDecoration: "none", border: "1px solid rgba(61,28,2,0.2)", borderRadius: 2 }}>
                 Tanya via WhatsApp
               </a>
             </div>
