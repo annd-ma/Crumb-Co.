@@ -3,24 +3,43 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { supabase } from "../../lib/supabase";
 
 const ADMIN_PW   = process.env.NEXT_PUBLIC_ADMIN_PASSWORD || "crumbadmin2025";
-const ADMIN_WA   = "6289540108751";
+const ADMIN_WA   = "6289524394626";
 const BUCKET     = "product-images";
 const STATUS_OPT = ["pending","confirmed","baking","ready","delivering","done","cancelled"];
 
 /* ══════════════════════════════════════════════
    LOGIN SCREEN
 ══════════════════════════════════════════════ */
-function LoginScreen({ onLogin }) {
+function LoginScreen({ onLoginSuccess }) {
+  const [email, setEmail] = useState("");
   const [pw, setPw] = useState("");
   const [err, setErr] = useState("");
-  const handle = (e) => {
+  const [loading, setLoading] = useState(false);
+
+  const handleLogin = async (e) => {
     e.preventDefault();
-    if (pw === ADMIN_PW) { sessionStorage.setItem("crumbco_admin", "1"); onLogin(); }
-    else setErr("Password salah.");
+    setErr("");
+    setLoading(true);
+
+    // Otentikasi ke Supabase menggunakan Email & Password
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: email,
+      password: pw,
+    });
+
+    setLoading(false);
+
+    if (error) {
+      setErr("Login gagal: " + error.message);
+    } else if (data.session) {
+      // Jika berhasil, panggil callback untuk mengubah state Auth di AdminPage
+      onLoginSuccess(data.session.user);
+    }
   };
+
   return (
     <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "var(--color-cream)", padding: 24 }}>
-      <form onSubmit={handle} style={{ width: "100%", maxWidth: 360, border: "1px solid rgba(61,28,2,0.08)", padding: "48px 36px", background: "var(--color-cream)" }}>
+      <form onSubmit={handleLogin} style={{ width: "100%", maxWidth: 360, border: "1px solid rgba(61,28,2,0.08)", padding: "48px 36px", background: "var(--color-cream)" }}>
         <div style={{ textAlign: "center", marginBottom: 36 }}>
           <div style={{ fontFamily: "var(--font-display)", fontSize: 26, fontWeight: 900, color: "var(--color-chocolate)", letterSpacing: "-0.02em" }}>
             Crumb & Co.
@@ -29,17 +48,31 @@ function LoginScreen({ onLogin }) {
             Admin Panel
           </div>
         </div>
+
+        {/* Input Email */}
+        <label style={{ fontFamily: "var(--font-body)", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(61,28,2,0.4)", fontWeight: 600, display: "block", marginBottom: 8 }}>
+          Email
+        </label>
+        <input
+          type="email" value={email} onChange={e => setEmail(e.target.value)} required
+          placeholder="admin@crumbco.com"
+          style={{ width: "100%", padding: "12px 14px", border: "1px solid rgba(61,28,2,0.12)", background: "none", fontFamily: "var(--font-body)", fontSize: 13, color: "var(--color-chocolate)", outline: "none", marginBottom: 16, borderRadius: 2 }}
+        />
+
+        {/* Input Password */}
         <label style={{ fontFamily: "var(--font-body)", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(61,28,2,0.4)", fontWeight: 600, display: "block", marginBottom: 8 }}>
           Password
         </label>
         <input
-          type="password" value={pw} onChange={e => setPw(e.target.value)}
+          type="password" value={pw} onChange={e => setPw(e.target.value)} required
           placeholder="••••••••"
-          style={{ width: "100%", padding: "12px 14px", border: "1px solid rgba(61,28,2,0.12)", background: "none", fontFamily: "var(--font-body)", fontSize: 13, color: "var(--color-chocolate)", outline: "none", marginBottom: err ? 8 : 20, borderRadius: 2 }}
+          style={{ width: "100%", padding: "12px 14px", border: "1px solid rgba(61,28,2,0.12)", background: "none", fontFamily: "var(--font-body)", fontSize: 13, color: "var(--color-chocolate)", outline: "none", marginBottom: err ? 8 : 24, borderRadius: 2 }}
         />
-        {err && <p style={{ fontFamily: "var(--font-body)", fontSize: 11, color: "#c0392b", marginBottom: 16 }}>{err}</p>}
-        <button type="submit" style={{ width: "100%", background: "var(--color-chocolate)", color: "var(--color-cream)", border: "none", padding: "13px 0", fontFamily: "var(--font-body)", fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", cursor: "pointer", borderRadius: 2 }}>
-          Masuk
+
+        {err && <p style={{ fontFamily: "var(--font-body)", fontSize: 11, color: "#c0392b", marginBottom: 16, padding: "8px", background: "rgba(192,57,43,0.08)", borderRadius: 2 }}>{err}</p>}
+        
+        <button type="submit" disabled={loading} style={{ width: "100%", background: loading ? "rgba(61,28,2,0.5)" : "var(--color-chocolate)", color: "var(--color-cream)", border: "none", padding: "13px 0", fontFamily: "var(--font-body)", fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", cursor: loading ? "wait" : "pointer", borderRadius: 2 }}>
+          {loading ? "Memverifikasi..." : "Masuk"}
         </button>
       </form>
     </div>
