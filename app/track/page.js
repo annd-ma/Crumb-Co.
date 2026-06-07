@@ -3,7 +3,7 @@ import { useState, useEffect, Suspense } from "react";
 import { supabase }                       from "../../lib/supabase";
 import { useSearchParams }                from "next/navigation";
 
-const ADMIN_WA = "6289540108751";
+const ADMIN_WA = "6289524394626";
 
 const STEPS = [
   { key: "pending",    label: "Pesanan Masuk",    desc: "Menunggu konfirmasi admin" },
