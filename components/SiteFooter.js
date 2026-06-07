@@ -14,7 +14,7 @@ export default function SiteFooter() {
               Crumb & Co.
             </div>
             <div style={{ fontFamily: "var(--font-body)", fontSize: 9, letterSpacing: "0.24em", textTransform: "uppercase", color: "var(--color-caramel)", fontWeight: 600, marginBottom: 20 }}>
-              Tugasin Bakery
+              Bakery
             </div>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "rgba(253,246,236,0.45)", lineHeight: 1.75, maxWidth: 300 }}>
               Artisan bakery berbahan organik lokal. Dipanggang segar setiap hari untuk meja makan Anda.
@@ -56,7 +56,7 @@ export default function SiteFooter() {
         </div>
 
         <div style={{ borderTop: "1px solid rgba(253,246,236,0.08)", paddingTop: 24, display: "flex", justifyContent: "space-between", fontSize: 11, color: "rgba(253,246,236,0.2)" }}>
-          <span>© 2026 Crumb & Co. by Tugasin Digital</span>
+          <span>© 2026 Crumb & Co. by @anmwld </span>
           <span>Bandung, Indonesia</span>
         </div>
       </div>
