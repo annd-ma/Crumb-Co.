@@ -62,7 +62,7 @@ export default function Navbar() {
               Crumb & Co.
             </div>
             <div style={{ fontFamily: "var(--font-body)", fontSize: 9, letterSpacing: "0.22em", color: "var(--color-caramel)", fontWeight: 600, textTransform: "uppercase", marginTop: 2 }}>
-              Tugasin Bakery
+              Bakery
             </div>
           </Link>
 
