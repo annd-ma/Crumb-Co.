@@ -29,7 +29,7 @@ export default function SiteFooter() {
             <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
               {[
                 ["Jam Buka", "Setiap hari 07.00 – 20.00 WIB"],
-                ["WhatsApp", "+62 895-401-087-518"],
+                ["WhatsApp", "+62 895-2439-4626"],
                 ["Instagram", "@crumbandco.id"],
               ].map(([k, v]) => (
                 <div key={k}>
