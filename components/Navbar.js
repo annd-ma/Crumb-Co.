@@ -30,7 +30,7 @@ export default function Navbar() {
           fontWeight: 500,
         }}
       >
-        Bahan 100% Organik &nbsp;·&nbsp; Gratis Ongkir Jakarta &gt; Rp 200K &nbsp;·&nbsp; Pesan sebelum 12.00 → Kirim hari ini
+        Bahan 100% Organik &nbsp;·&nbsp; Gratis Ongkir Bandung &gt; Rp 200K &nbsp;·&nbsp; Pesan sebelum 12.00 → Kirim hari ini
       </div>
 
       <nav
