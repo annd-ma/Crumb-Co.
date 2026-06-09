@@ -23,7 +23,7 @@ export default function HeroSection() {
         <div>
           <div className="inline-flex items-center gap-2 bg-caramel/10 border border-caramel/20 rounded-full px-4 py-1.5 text-[10px] font-black tracking-[0.25em] text-caramel uppercase mb-8">
             <span className="w-1.5 h-1.5 rounded-full bg-caramel animate-pulse" />
-            Artisan Bakery Jakarta
+            Artisan Bakery Bandung
           </div>
 
           <h1 className="font-serif text-6xl md:text-7xl font-black text-chocolate leading-[0.9] tracking-tight mb-6">
