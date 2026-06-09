@@ -46,7 +46,7 @@ export default async function HomePage() {
           <div style={{ position: "absolute", left: 0, top: "15%", bottom: "15%", width: 1, background: "rgba(61,28,2,0.08)" }} />
 
           <div style={{ fontFamily: "var(--font-body)", fontSize: 10, letterSpacing: "0.28em", textTransform: "uppercase", color: "var(--color-caramel)", fontWeight: 600, marginBottom: 28 }}>
-            Artisan Bakery — Jakarta
+            Artisan Bakery — Bandung
           </div>
 
           <h1 style={{
@@ -230,7 +230,7 @@ export default async function HomePage() {
                 <em style={{ fontStyle: "italic" }}>terima hari ini.</em>
               </h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "rgba(61,28,2,0.5)" }}>
-                Gratis ongkir area Jakarta untuk pesanan di atas Rp 200.000
+                Gratis ongkir area Bandung untuk pesanan di atas Rp 200.000
               </p>
             </div>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
