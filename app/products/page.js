@@ -48,24 +48,29 @@ export default function ProductsPage() {
   if (sort === "default")    displayed.sort((a, b) => (b.is_best_seller ? 1 : 0) - (a.is_best_seller ? 1 : 0));
 
   return (
-    <div style={{ maxWidth: 1200, margin: "0 auto", padding: "80px 24px 120px" }}>
+    // FIX 1: Kurangi paddingTop dari 80px jadi 40px
+    <div style={{ maxWidth: 1200, margin: "0 auto", padding: "40px 24px 100px" }}>
+      
       {/* Header */}
       <RevealWrapper>
-        <div style={{ marginBottom: 56 }}>
-          <div style={{ fontFamily: "var(--font-body)", fontSize: 10, letterSpacing: "0.28em", textTransform: "uppercase", color: "var(--color-caramel)", fontWeight: 600, marginBottom: 12 }}>
+        {/* FIX 2: Kurangi marginBottom dari 56px jadi 24px */}
+        <div style={{ marginBottom: 24 }}>
+          <div style={{ fontFamily: "var(--font-body)", fontSize: 10, letterSpacing: "0.28em", textTransform: "uppercase", color: "var(--color-caramel)", fontWeight: 600, marginBottom: 8 }}>
             Katalog
           </div>
           <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(38px, 5vw, 64px)", fontWeight: 900, color: "var(--color-chocolate)", letterSpacing: "-0.03em", lineHeight: 1 }}>
             Menu Kami
           </h1>
-          <p style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "rgba(61,28,2,0.45)", marginTop: 12 }}>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "rgba(61,28,2,0.45)", marginTop: 8 }}>
             {products.length} produk tersedia hari ini
           </p>
         </div>
       </RevealWrapper>
 
       {/* Toolbar */}
-      <div style={{ display: "flex", gap: 12, marginBottom: 48, flexWrap: "wrap", alignItems: "center", borderBottom: "1px solid rgba(61,28,2,0.08)", paddingBottom: 24 }}>
+      {/* FIX 3: Kurangi marginBottom dari 48px jadi 24px, dan paddingBottom dari 24px jadi 16px */}
+      <div style={{ display: "flex", gap: 12, marginBottom: 24, flexWrap: "wrap", alignItems: "center", borderBottom: "1px solid rgba(61,28,2,0.08)", paddingBottom: 16 }}>
+        
         {/* Search */}
         <input
           type="text"
@@ -120,11 +125,11 @@ export default function ProductsPage() {
       {loading ? (
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }} className="products-grid">
           {[...Array(6)].map((_, i) => (
-            <div key={i} style={{ aspectRatio: "3/4", background: "var(--color-blush)", animation: "pulse 1.5s infinite", opacity: 0.4 }} />
+            <div key={i} style={{ aspectRatio: "3/4", background: "var(--color-blush)", animation: "pulse 1.5s infinite", opacity: 0.4, borderRadius: 2 }} />
           ))}
         </div>
       ) : displayed.length === 0 ? (
-        <div style={{ textAlign: "center", paddingTop: 80 }}>
+        <div style={{ textAlign: "center", paddingTop: 40 }}>
           <div style={{ fontFamily: "var(--font-display)", fontSize: 22, fontStyle: "italic", color: "rgba(61,28,2,0.3)", marginBottom: 12 }}>
             Produk tidak ditemukan
           </div>
